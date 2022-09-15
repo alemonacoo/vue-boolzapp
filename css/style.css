@@ -1,0 +1,83 @@
+/* General */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --debug-border: solid grey 1px;
+}
+
+/* APP */
+
+.appContainer {
+  height: 100vh;
+  width: 100vw;
+  padding: 3% 5% 3% 5%;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+}
+
+.userInfo,
+.contactInfo {
+  height: 10%;
+  border: var(--debug-border);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT SIDE */
+.leftSide {
+  width: 35%;
+  height: 100%;
+  border: var(--debug-border);
+}
+
+.alert {
+  height: 10%;
+  width: 100%;
+  background-color: aquamarine;
+  border: var(--debug-border);
+}
+.searchBar {
+  height: 5%;
+  width: 100%;
+  border: var(--debug-border);
+}
+.availableChats {
+  height: 75%;
+  width: 100%;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 0;
+}
+.chat {
+  height: 14%;
+  width: 100%;
+  border: var(--debug-border);
+}
+
+/* RIGHT SIDE */
+.rightSide {
+  width: 65%;
+  height: 100%;
+  border: var(--debug-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.chatArea {
+  height: 80%;
+  width: 100%;
+  border: var(--debug-border);
+}
+
+.keyboard {
+  height: 10%;
+  width: 100%;
+  border: var(--debug-border);
+}

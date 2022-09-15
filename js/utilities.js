@@ -1,5 +1,3 @@
-console.log("JS OK!");
-
 console.log("Utilities OK!");
 
 const contacts = [
@@ -165,10 +163,3 @@ const contacts = [
     ],
   },
 ];
-
-const app = new Vue({
-  el: "#app",
-  data: {
-    contacts,
-  },
-});
