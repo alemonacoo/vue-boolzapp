@@ -17,37 +17,76 @@
   display: flex;
   position: absolute;
   z-index: 1;
+  background: linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 100px,
+    #dbdcd6 0
+  );
+  background-color: #009889;
+}
+
+.userInfo,
+.contactInfo,
+.searchBar,
+.alert,
+.chat,
+.keyboard {
+  padding: 0px 5px 0px 5px;
+  background-color: rgba(235, 235, 235, 1);
 }
 
 .userInfo,
 .contactInfo {
-  border: var(--debug-border);
-  padding: 10px;
+  min-height: 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+i {
+  margin: 5px;
+  color: grey;
 }
 
 /* LEFT SIDE */
 .leftSide {
   width: 35%;
   height: 100%;
-  border: var(--debug-border);
   display: flex;
   flex-direction: column;
 }
 
 .alert {
-  padding: 10px;
   width: 100%;
-  background-color: aquamarine;
-  border: var(--debug-border);
+  background-color: #8fdcfd;
+  display: flex;
+  align-items: center;
 }
+.alert > i {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  color: #8fdcfd;
+}
+.alert > .alertDescription {
+  font-size: 0.6rem;
+  color: #17337c;
+}
+.alert > .alertDescription > a {
+  color: grey;
+}
+
 .searchBar {
-  padding: 10px;
+  display: flex;
+  align-items: center;
   width: 100%;
-  border: var(--debug-border);
+  border-bottom: solid 1px #e3e3e3;
 }
+.searchBar input {
+  width: 100%;
+}
+
 .availableChats {
   flex-grow: 1;
   width: 100%;
@@ -56,28 +95,41 @@
   z-index: 0;
 }
 .chat {
-  height: 10%;
+  height: 13%;
   width: 100%;
-  border: var(--debug-border);
+  border-bottom: solid 1px #e3e3e3;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+.user img {
+  height: 33px;
+  border-radius: 50%;
+  margin: 4px;
 }
 
 /* RIGHT SIDE */
 .rightSide {
   width: 65%;
   height: 100%;
-  border: var(--debug-border);
   display: flex;
   flex-direction: column;
 }
 
+.contactInfo {
+  border-left: solid 1px #e3e3e3;
+}
+
 .chatArea {
   width: 100%;
-  border: var(--debug-border);
   flex-grow: 1;
+  background-image: url("../img/mine.jpg");
 }
 
 .keyboard {
   height: 10%;
   width: 100%;
-  border: var(--debug-border);
+  background-color: #f3efeb;
 }
