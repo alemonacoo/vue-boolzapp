@@ -119,6 +119,10 @@ i {
   font-size: 0.6rem;
   color: grey;
 }
+#messageTime {
+  font-size: 0.6rem;
+  color: grey;
+}
 
 .user,
 .contact,
@@ -151,17 +155,26 @@ i {
   width: 100%;
   flex-grow: 1;
   background-image: url("../img/mine.jpg");
-}
-
-.message {
-  margin: 10px;
   display: flex;
   flex-direction: column;
 }
 
+.message {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  width: fit-content;
+  max-width: 50%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 11px;
+  line-height: 15px;
+}
+
 .messageSent {
-  background-color: #009889;
-  align-items: flex-end;
+  background-color: #d6f9bc;
+  align-self: end;
+  align-items: end;
 }
 .messageReceived {
   background-color: white;
