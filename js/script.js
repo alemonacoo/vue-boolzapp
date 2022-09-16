@@ -8,6 +8,7 @@ const app = new Vue({
     contacts,
     user,
     activeIndex: 0,
+    message: "",
   },
   methods: {
     getLastMessage(i) {
@@ -39,10 +40,46 @@ const app = new Vue({
     sortMessage(index, i) {
       return this.contacts[index].messages[i].status;
     },
+    sendMessage(message) {
+      let newMessage = {
+        date: setMessageDate(),
+        message: message,
+        status: "sent",
+      };
+      this.contacts[this.activeIndex].messages.push(newMessage);
+      this.message = "";
+    },
   },
 });
 
 function parseDate(string) {
   let shortDate = string.slice(11, 16);
   return shortDate;
+}
+
+function setMessageDate() {
+  let day = new Date().getDate();
+  if (day < 10) {
+    day = `0${day}`;
+  }
+  let month = new Date().getMonth();
+  if (month < 10) {
+    month = `0${month}`;
+  }
+  let year = new Date().getFullYear();
+  let hours = new Date().getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = new Date().getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let seconds = new Date().getSeconds();
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
+  let string = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+  console.log(string);
+  return string;
 }
