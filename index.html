@@ -57,7 +57,12 @@
 
         <!-- Chats Section -->
         <div class="availableChats">
-          <div v-for="(item, index) in contacts" class="chat">
+          <div
+            v-for="(item, index) in contacts"
+            class="chat"
+            @click="setActiveIndex(index)"
+            :class="{chatActive : index === activeIndex}"
+          >
             <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="" />
             <div class="chatDescription">
               <p>{{contacts[index].name}}</p>

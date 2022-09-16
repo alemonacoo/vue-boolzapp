@@ -102,6 +102,10 @@ i {
   border-bottom: solid 1px #e3e3e3;
   background-color: #ffffff;
 }
+.chatActive {
+  background-color: lightgrey;
+}
+
 #lastMessage {
   color: grey;
   font-size: 0.6rem;
