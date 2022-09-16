@@ -55,6 +55,7 @@ i {
   flex-direction: column;
 }
 
+/* Alert Section */
 .alert {
   width: 100%;
   background-color: #8fdcfd;
@@ -75,6 +76,7 @@ i {
   color: grey;
 }
 
+/* Search Section */
 .searchBar {
   display: flex;
   align-items: center;
@@ -89,6 +91,7 @@ i {
   border-radius: 5px;
 }
 
+/* Chats Section */
 .availableChats {
   flex-grow: 1;
   width: 100%;
@@ -155,6 +158,7 @@ i {
   border-left: solid 1px #e3e3e3;
 }
 
+/* Chat Section */
 .chatArea {
   min-height: 86%;
   width: 100%;
@@ -189,6 +193,8 @@ i {
 .messageReceived {
   background-color: white;
 }
+
+/* Keyboard section */
 
 .keyboard {
   display: flex;

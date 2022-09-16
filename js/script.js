@@ -52,11 +52,14 @@ const app = new Vue({
   },
 });
 
+// Useful Functions:
+// Function to get date from data
 function parseDate(string) {
   let shortDate = string.slice(11, 16);
   return shortDate;
 }
 
+// Function to creat a date just like the ones found in our data
 function setMessageDate() {
   let day = new Date().getDate();
   if (day < 10) {
