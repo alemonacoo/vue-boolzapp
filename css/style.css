@@ -9,7 +9,7 @@
   --debug-border: solid grey 1px;
 }
 
-/* APP */
+/* APP and repeating settings */
 .appContainer {
   height: 100vh;
   width: 100vw;
@@ -24,6 +24,7 @@
     #dbdcd6 0
   );
   background-color: #009889;
+  font-family: Helvetica, sans-serif;
 }
 
 .userInfo,
@@ -34,6 +35,7 @@
 .keyboard {
   padding: 0px 5px 0px 5px;
   background-color: rgba(235, 235, 235, 1);
+  font-size: 0.8rem;
 }
 
 .userInfo,
@@ -85,6 +87,9 @@ i {
 }
 .searchBar input {
   width: 100%;
+  border: solid 1px #e3e3e3;
+  padding: 4px;
+  border-radius: 5px;
 }
 
 .availableChats {
@@ -129,7 +134,7 @@ i {
 }
 
 .keyboard {
-  height: 10%;
+  height: 8%;
   width: 100%;
   background-color: #f3efeb;
 }
