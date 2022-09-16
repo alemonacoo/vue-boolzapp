@@ -102,6 +102,18 @@ i {
   border-bottom: solid 1px #e3e3e3;
   background-color: #ffffff;
 }
+#lastMessage {
+  color: grey;
+  font-size: 0.6rem;
+  flex-grow: 0;
+}
+#timeLastMessage {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  font-size: 0.6rem;
+  color: grey;
+}
 
 .user,
 .contact,
@@ -112,6 +124,7 @@ i {
 .user img,
 .chat img,
 .contactInfo img {
+  flex-grow: 0;
   height: 33px;
   border-radius: 50%;
   margin: 4px;

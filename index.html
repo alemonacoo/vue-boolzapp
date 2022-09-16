@@ -24,6 +24,7 @@
     <div class="appContainer" id="app">
       <!-- Left Part -->
       <div class="leftSide">
+        <!-- User infos -->
         <div class="userInfo">
           <div class="user">
             <img
@@ -39,6 +40,7 @@
           </div>
         </div>
 
+        <!-- Alert Section -->
         <div class="alert">
           <i class="fa-regular fa-bell-slash"></i>
           <div class="alertDescription">
@@ -46,32 +48,23 @@
             <p><a href="">Attiva notifiche desktop</a></p>
           </div>
         </div>
+
+        <!-- Search Section -->
         <div class="searchBar">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="search" placeholder="Search" name="" id="" />
         </div>
+
+        <!-- Chats Section -->
         <div class="availableChats">
-          <div class="chat">
-            <img src="img/avatar_1.jpg" alt="" />
+          <div v-for="(item, index) in contacts" class="chat">
+            <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="" />
             <div class="chatDescription">
-              <p>nome</p>
-              <p>ultimo messaggio</p>
+              <p>{{contacts[index].name}}</p>
+              <p id="lastMessage">{{ getLastMessage(index) }}</p>
             </div>
+            <div id="timeLastMessage">{{ getLastMessageTime(index)}}</div>
           </div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
-          <div class="chat"></div>
         </div>
       </div>
 
