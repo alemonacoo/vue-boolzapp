@@ -63,7 +63,10 @@
             @click="setActiveIndex(index)"
             :class="{chatActive : index === activeIndex}"
           >
-            <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="" />
+            <img
+              :src="'img/avatar' + contacts[index].avatar + '.jpg'"
+              alt="contacts[index].name"
+            />
             <div class="chatDescription">
               <p>{{contacts[index].name}}</p>
               <p id="lastMessage">{{ getLastMessage(index) }}</p>
@@ -77,10 +80,13 @@
       <div class="rightSide">
         <div class="contactInfo">
           <div class="contact">
-            <img src="img/avatar_1.jpg" alt="" />
+            <img
+              :src="'img/avatar'+ contacts[activeIndex].avatar + '.jpg'"
+              alt=""
+            />
             <div class="chatDescription">
-              <p>nome</p>
-              <p>status</p>
+              <p>{{ contacts[activeIndex].name}}</p>
+              <p id="visibility">{{ getVisibility(activeIndex)}}</p>
             </div>
           </div>
           <div class="buttons">
@@ -89,7 +95,15 @@
             <i class="fa-solid fa-paperclip"></i>
           </div>
         </div>
-        <div class="chatArea"></div>
+        <div class="chatArea">
+          <div
+            class="message"
+            :class="sortMessage(activeIndex, index) === 'received' ? 'messageReceived' : 'messageSent'"
+            v-for="(item, index) in contacts[activeIndex].messages"
+          >
+            {{ contacts[activeIndex].messages[index].message }}
+          </div>
+        </div>
         <div class="keyboard"></div>
       </div>
     </div>

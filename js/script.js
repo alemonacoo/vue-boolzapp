@@ -29,6 +29,16 @@ const app = new Vue({
       console.log(this.activeIndex);
       return this.activeIndex;
     },
+    getVisibility(i) {
+      if (this.contacts[i].visible) {
+        return "Online";
+      } else {
+        return "Offline";
+      }
+    },
+    sortMessage(index, i) {
+      return this.contacts[index].messages[i].status;
+    },
   },
 });
 
