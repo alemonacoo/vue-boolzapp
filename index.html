@@ -107,7 +107,17 @@
             v-for="(item, index) in contacts[activeIndex].messages"
           >
             {{ contacts[activeIndex].messages[index].message }}
-            <div id="messageTime">{{getMessageTime(activeIndex, index)}}</div>
+
+            <div class="lowerMessageSection">
+              <div id="messageTime">{{getMessageTime(activeIndex, index)}}</div>
+              <div id="messageActions">
+                <i class="fa-solid fa-chevron-down"></i>
+                <div id="messageActionsExpand">
+                  <input type="button" value="Elimina Messaggio" />
+                  <input type="button" value="Info Messaggio" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="keyboard">

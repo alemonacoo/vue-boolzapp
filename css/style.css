@@ -131,10 +131,6 @@ i {
   font-size: 0.6rem;
   color: grey;
 }
-#messageTime {
-  font-size: 0.6rem;
-  color: grey;
-}
 
 .user,
 .contact {
@@ -184,6 +180,7 @@ i {
   border-radius: 11px;
   line-height: 15px;
   word-break: break-all;
+  position: relative;
 }
 .message:last-of-type {
   margin-bottom: 5px;
@@ -196,6 +193,39 @@ i {
 }
 .received {
   background-color: white;
+}
+
+.lowerMessageSection {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+#messageActions {
+  font-size: 0.6rem;
+  position: relative;
+}
+#messageActionsExpand {
+  position: absolute;
+  width: 100px;
+  top: 20px;
+  left: -60px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+#messageActionsExpand input {
+  font-size: 0.6rem;
+  margin-bottom: 1px;
+  background-color: white;
+  border: none;
+  padding: 5px;
+}
+
+#messageTime {
+  font-size: 0.6rem;
+  color: grey;
 }
 
 /* Keyboard section */
