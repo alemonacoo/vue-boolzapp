@@ -53,7 +53,7 @@
         <div class="searchBar">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input
-            type="search"
+            type="text"
             placeholder="Search"
             @keyup="searchChat(char)"
             v-model="char"
@@ -113,11 +113,8 @@
         <div class="keyboard">
           <i class="fa-regular fa-face-smile"></i>
           <textarea
+            type="textarea"
             placeholder="Scrivi un messaggio e premi invio!"
-            name=""
-            id=""
-            cols="30"
-            rows="1"
             v-model="message"
             @keyup.enter="sendMessage(message)"
           ></textarea>
