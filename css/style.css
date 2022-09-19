@@ -185,12 +185,12 @@ i {
   margin-bottom: 5px;
 }
 
-.messageSent {
+.sent {
   background-color: #d6f9bc;
   align-self: end;
   align-items: end;
 }
-.messageReceived {
+.received {
   background-color: white;
 }
 

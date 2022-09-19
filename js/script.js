@@ -37,9 +37,6 @@ const app = new Vue({
         return "Offline";
       }
     },
-    sortMessage(index, i) {
-      return this.contacts[index].messages[i].status;
-    },
     sendMessage(message) {
       let newMessage = {
         date: setMessageDate(),

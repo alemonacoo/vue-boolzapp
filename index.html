@@ -98,7 +98,7 @@
         <div class="chatArea">
           <div
             class="message"
-            :class="sortMessage(activeIndex, index) === 'received' ? 'messageReceived' : 'messageSent'"
+            :class="item.status"
             v-for="(item, index) in contacts[activeIndex].messages"
           >
             {{ contacts[activeIndex].messages[index].message }}
