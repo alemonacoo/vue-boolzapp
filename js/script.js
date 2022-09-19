@@ -9,6 +9,7 @@ const app = new Vue({
     user,
     activeIndex: 0,
     message: "",
+    myTimeout: setTimeout(this.receiveMessage, 5000),
   },
   methods: {
     getLastMessage(i) {
@@ -38,13 +39,23 @@ const app = new Vue({
       }
     },
     sendMessage(message) {
-      let newMessage = {
+      let newSentMessage = {
         date: setMessageDate(),
         message: message,
         status: "sent",
       };
-      this.contacts[this.activeIndex].messages.push(newMessage);
+      this.contacts[this.activeIndex].messages.push(newSentMessage);
       this.message = "";
+      setTimeout(this.receiveMessage, 2000);
+    },
+    receiveMessage() {
+      let newReceivedMessage = {
+        date: setMessageDate(),
+        message: "OK! (automated response after 2s)",
+        status: "received",
+      };
+      this.contacts[this.activeIndex].messages.push(newReceivedMessage);
+      console.log("questa è una risposta automatica!");
     },
   },
 });
