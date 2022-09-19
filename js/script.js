@@ -9,9 +9,16 @@ const app = new Vue({
     user,
     activeIndex: 0,
     message: "",
-    myTimeout: setTimeout(this.receiveMessage, 5000),
+    char: "",
   },
   methods: {
+    getOnlineOffline(i) {
+      if (this.contacts[i].visible) {
+        return "Online";
+      } else {
+        return "Offline";
+      }
+    },
     getLastMessage(i) {
       let lastMessage = "";
       lastMessage =
@@ -28,15 +35,8 @@ const app = new Vue({
     },
     setActiveIndex(i) {
       this.activeIndex = i;
-      console.log(this.activeIndex);
+      console.log("Active Chat:" + this.activeIndex);
       return this.activeIndex;
-    },
-    getVisibility(i) {
-      if (this.contacts[i].visible) {
-        return "Online";
-      } else {
-        return "Offline";
-      }
     },
     sendMessage(message) {
       let newSentMessage = {
@@ -56,6 +56,30 @@ const app = new Vue({
       };
       this.contacts[this.activeIndex].messages.push(newReceivedMessage);
       console.log("questa è una risposta automatica!");
+    },
+    isVisible(i) {
+      if (!this.contacts[i].visible) {
+        return "hideChat";
+      }
+    },
+    searchChat(char) {
+      console.log(char);
+      for (i = 0; i < this.contacts.length; i++) {
+        if (this.contacts[i].visible) {
+          if (!this.contacts[i].name.includes(char)) {
+            this.changeVisibility(i);
+          }
+        } else {
+          if (this.contacts[i].name.includes(char)) {
+            this.changeVisibility(i);
+          }
+        }
+      }
+    },
+
+    changeVisibility(i) {
+      this.contacts[i].visible = !this.contacts[i].visible;
+      console.log("Visibility changed for:", this.contacts[i].name);
     },
   },
 });
