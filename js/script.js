@@ -66,11 +66,15 @@ const app = new Vue({
       console.log(char);
       for (i = 0; i < this.contacts.length; i++) {
         if (this.contacts[i].visible) {
-          if (!this.contacts[i].name.includes(char)) {
+          if (
+            !this.contacts[i].name.toLowerCase().includes(char.toLowerCase())
+          ) {
             this.changeVisibility(i);
           }
         } else {
-          if (this.contacts[i].name.includes(char)) {
+          if (
+            this.contacts[i].name.toLowerCase().includes(char.toLowerCase())
+          ) {
             this.changeVisibility(i);
           }
         }
