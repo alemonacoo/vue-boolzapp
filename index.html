@@ -63,10 +63,11 @@
         <!-- Chats Section -->
         <div class="availableChats">
           <div
+            v-if="contacts[index].visible"
             v-for="(item, index) in contacts"
             class="chat"
             @click="setActiveIndex(index)"
-            :class="[{chatActive : index === activeIndex}, isVisible(index)]"
+            :class="{chatActive : index === activeIndex}"
           >
             <img
               :src="'img/avatar' + contacts[index].avatar + '.jpg'"

@@ -57,11 +57,6 @@ const app = new Vue({
       this.contacts[this.activeIndex].messages.push(newReceivedMessage);
       console.log("questa è una risposta automatica!");
     },
-    isVisible(i) {
-      if (!this.contacts[i].visible) {
-        return "hideChat";
-      }
-    },
     searchChat(char) {
       console.log(char);
       for (i = 0; i < this.contacts.length; i++) {
